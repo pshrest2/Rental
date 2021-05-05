@@ -1,0 +1,28 @@
+﻿@model MRent.ViewModels.CustomerViewModel
+@{
+    ViewBag.Title = "CustomerList";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Customers</h2>
+@if (Model.Customers.Count() == 0)
+{
+    <h3>We don't have any movies yet.</h3>
+}
+else
+{
+
+    <table class="table table-striped">
+        <thead>
+            <tr><th scope="col">Customer</th></tr>
+        </thead>
+        <tbody>
+            @foreach (var customer in Model.Customers)
+            {
+                <tr><td><a href="Customers/Details/@customer.Id"> @customer.Name </a></td></tr>
+            }
+        </tbody>
+    </table>
+}
+
+
