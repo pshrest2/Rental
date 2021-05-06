@@ -5,44 +5,40 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Data.Entity;
 
 namespace MRent.Controllers
 {
     public class CustomersController : Controller
     {
+        private ApplicationDbContext _context;
+        public CustomersController()
+        {
+            _context = new ApplicationDbContext();
+        }
+
+        protected override void Dispose(bool disposing)
+        {
+            _context.Dispose();
+        }
+
         // GET: Customers
         public ActionResult Index()
         {
+            var customers = _context.Customers.Include(c => c.MembershipType).ToList();
 
-            var customers = new List<Customer>()
-            {
-                //new Customer{Id = 1, Name = "Pranaya Shrestha" },
-                //new Customer{Id = 2, Name = "Alexis Graham" },
-                //new Customer{Id = 3, Name = "John Doe" }
-            };
-
-            var viewModel = new CustomerViewModel { Customers = customers };
-
-            return View(viewModel);
+            return View(customers);
         }
 
         public ActionResult Details(int Id)
         {
-            var customers = new List<Customer>()
-            {
-                new Customer{Id = 1, Name = "Pranaya Shrestha" },
-                new Customer{Id = 2, Name = "Alexis Graham" },
-                new Customer{Id = 3, Name = "John Doe" }
-            };
+            var customer = _context.Customers.SingleOrDefault(c => c.Id == Id);
+            
+            if (customer == null)
+                return HttpNotFound();
+            
+            return View(customer);
 
-            foreach (var customer in customers)
-            {
-                if (customer.Id == Id)
-                {
-                    return View(customer);
-                }
-            }
-            return HttpNotFound();
         }
     }
 }

@@ -10,43 +10,31 @@ namespace MRent.Controllers
 {
     public class MoviesController : Controller
     {
+
+        private ApplicationDbContext _context;
+        public MoviesController()
+        {
+            _context = new ApplicationDbContext();
+        }
+        protected override void Dispose(bool disposing)
+        {
+            _context.Dispose();
+        }
         // GET: Movies
         public ActionResult Index()
         {
-            var movies = new List<Movie>
-            {
-                //new Movie { Id = 1, Name="Nai Na Vannu La"},
-                //new Movie { Id = 2, Name="Terminator 2"},
-                //new Movie { Id = 3, Name="Gau Khane Katha"},
-                //new Movie { Id = 4, Name="Jiban Sangini"}
-            };
-
-            var viewModel = new MovieViewModel
-            {
-                Movies = movies
-            };
-
-            return View(viewModel);
+            var movies = _context.Movies.ToList();
+            return View(movies);
         }
 
         public ActionResult Details(int Id)
         {
-            var movies = new List<Movie>
-            {
-                new Movie { Id = 1, Name="Nai Na Vannu La"},
-                new Movie { Id = 2, Name="Terminator 2"},
-                new Movie { Id = 3, Name="Gau Khane Katha"},
-                new Movie { Id = 4, Name="Jiban Sangini"}
-            };
+            var movie = _context.Movies.SingleOrDefault(c => c.Id == Id);
 
-            foreach (var movie in movies)
-            {
-                if (movie.Id == Id)
-                {
-                    return View(movie);
-                }
-            }
-            return HttpNotFound();
+            if (movie == null)
+                return HttpNotFound();
+  
+            return View(movie);  
         }
 
 

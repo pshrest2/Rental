@@ -1,24 +1,26 @@
-﻿@model MRent.ViewModels.MovieViewModel
+﻿@model IEnumerable<MRent.Models.Movie>
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <h2>Movies</h2>
-@if (Model.Movies.Count() == 0)
+@if (!Model.Any())
 {
     <h3>We don't have any customers yet.</h3>
 }
 else
 {
-    <table class="table table-striped">
+    <table class="table table-bordered table-hover">
         <thead>
-            <tr><th scope="col">Movie</th></tr>
+            <tr><th>Movie</th></tr>
         </thead>
         <tbody>
-            @foreach (var movie in Model.Movies)
+            @foreach (var movie in Model)
             {
-                <tr><td><a href="Movies/Details/@movie.Id">@movie.Name</a></td></tr>
+            <tr>
+                <td>@Html.ActionLink(movie.Name, "Details", "Movies", new { id = movie.Id }, null)</td>
+            </tr>
             }
         </tbody>
     </table>
