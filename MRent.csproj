@@ -211,6 +211,14 @@
     <Compile Include="Migrations\202105081521566_AddBirthDateToCustomer.Designer.cs">
       <DependentUpon>202105081521566_AddBirthDateToCustomer.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202105081544134_AddMorePropertiesToMovies.cs" />
+    <Compile Include="Migrations\202105081544134_AddMorePropertiesToMovies.Designer.cs">
+      <DependentUpon>202105081544134_AddMorePropertiesToMovies.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202105081545144_UpdateMoviesAttributes.cs" />
+    <Compile Include="Migrations\202105081545144_UpdateMoviesAttributes.Designer.cs">
+      <DependentUpon>202105081545144_UpdateMoviesAttributes.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -331,6 +339,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202105081521566_AddBirthDateToCustomer.resx">
       <DependentUpon>202105081521566_AddBirthDateToCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105081544134_AddMorePropertiesToMovies.resx">
+      <DependentUpon>202105081544134_AddMorePropertiesToMovies.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105081545144_UpdateMoviesAttributes.resx">
+      <DependentUpon>202105081545144_UpdateMoviesAttributes.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
