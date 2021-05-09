@@ -20,9 +20,12 @@ namespace MRent.Models
         public DateTime DateAdded { get; set; }
 
         [Display(Name = "Release Date")]
+        [Required]
         public DateTime ReleaseDate { get; set; }
 
         [Display(Name = "Number in Stock")]
+        [Required]
+        [Range(1, 50)]
         public byte NumberInStock { get; set; }
     }
 }
