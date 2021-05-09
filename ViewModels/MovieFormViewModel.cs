@@ -6,8 +6,9 @@ using System.Web;
 
 namespace MRent.ViewModels
 {
-    public class MovieViewModel
+    public class MovieFormViewModel
     {
-        public List<Movie> Movies { get; set; }
+        public IEnumerable<Genre> Genres { get; set; }
+        public Movie Movie { get; set; }
     }
 }

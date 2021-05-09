@@ -7,13 +7,13 @@ namespace MRent.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class UpdateMoviesAttributes : IMigrationMetadata
+    public sealed partial class PopulateGenres : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(UpdateMoviesAttributes));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(PopulateGenres));
         
         string IMigrationMetadata.Id
         {
-            get { return "202105081545144_UpdateMoviesAttributes"; }
+            get { return "202105092112131_PopulateGenres"; }
         }
         
         string IMigrationMetadata.Source
