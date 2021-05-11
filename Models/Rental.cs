@@ -19,8 +19,5 @@ namespace MRent.Models
         public DateTime DateRented { get; set; }
 
         public DateTime? DateReturned { get; set; }
-
-        public int Available { get; set; }
-
     }
 }

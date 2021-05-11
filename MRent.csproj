@@ -205,6 +205,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\MoviesController.cs" />
+    <Compile Include="Controllers\RentalsController.cs" />
     <Compile Include="Dtos\CustomerDto.cs" />
     <Compile Include="Dtos\GenreDto.cs" />
     <Compile Include="Dtos\MembershipTypeDto.cs" />
@@ -269,6 +270,22 @@
     <Compile Include="Migrations\202105111831180_AddRentalToDomain.cs" />
     <Compile Include="Migrations\202105111831180_AddRentalToDomain.Designer.cs">
       <DependentUpon>202105111831180_AddRentalToDomain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202105111848180_AddUpdateAdditionalAttributes.cs" />
+    <Compile Include="Migrations\202105111848180_AddUpdateAdditionalAttributes.Designer.cs">
+      <DependentUpon>202105111848180_AddUpdateAdditionalAttributes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202105111848509_AddNumberAvailableToMovie.cs" />
+    <Compile Include="Migrations\202105111848509_AddNumberAvailableToMovie.Designer.cs">
+      <DependentUpon>202105111848509_AddNumberAvailableToMovie.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202105111853050_FixRentalDomain.cs" />
+    <Compile Include="Migrations\202105111853050_FixRentalDomain.Designer.cs">
+      <DependentUpon>202105111853050_FixRentalDomain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202105111853474_AddNumberAvailableInMovie.cs" />
+    <Compile Include="Migrations\202105111853474_AddNumberAvailableInMovie.Designer.cs">
+      <DependentUpon>202105111853474_AddNumberAvailableInMovie.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -528,6 +545,7 @@
     <Content Include="Views\Customers\CustomerForm.cshtml" />
     <Content Include="Views\Movies\MovieForm.cshtml" />
     <Content Include="Views\Movies\ReadOnlyList.cshtml" />
+    <Content Include="Views\Rentals\New.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -587,6 +605,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202105111831180_AddRentalToDomain.resx">
       <DependentUpon>202105111831180_AddRentalToDomain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105111848180_AddUpdateAdditionalAttributes.resx">
+      <DependentUpon>202105111848180_AddUpdateAdditionalAttributes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105111848509_AddNumberAvailableToMovie.resx">
+      <DependentUpon>202105111848509_AddNumberAvailableToMovie.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105111853050_FixRentalDomain.resx">
+      <DependentUpon>202105111853050_FixRentalDomain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105111853474_AddNumberAvailableInMovie.resx">
+      <DependentUpon>202105111853474_AddNumberAvailableInMovie.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
