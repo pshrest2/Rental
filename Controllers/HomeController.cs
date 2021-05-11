@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace MRent.Controllers
 {
- 
+
     [AllowAnonymous]
     public class HomeController : Controller
     {
